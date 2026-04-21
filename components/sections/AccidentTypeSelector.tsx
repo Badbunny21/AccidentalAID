@@ -191,7 +191,7 @@ export function AccidentTypeSelector() {
   return (
     <section
       id="car-accidents"
-      className="relative overflow-hidden border-t border-stone-200 bg-stone-100 px-4 py-10 md:px-8 md:py-24"
+      className="relative overflow-hidden border-t border-stone-200 bg-stone-100 px-4 py-6 md:px-8 md:py-12"
     >
       <div className="pointer-events-none absolute inset-0 bg-grain opacity-20" />
 
@@ -202,14 +202,14 @@ export function AccidentTypeSelector() {
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={0.06}>
-          <p className="mx-auto mt-5 max-w-2xl text-pretty text-center text-sm leading-relaxed text-gray-500 md:text-base">
+          <p className="mx-auto mt-3 max-w-2xl text-pretty text-center text-sm leading-relaxed text-gray-500 md:text-base">
             Pick what happened—then read what to know{" "}
             <span className="font-semibold text-gray-700">before</span> you deal with
             insurance.
           </p>
         </ScrollReveal>
 
-        <div className="mt-8 grid grid-cols-2 gap-3 md:mt-10 md:grid-cols-6 md:gap-3">
+        <div className="mt-5 grid grid-cols-2 gap-3 md:mt-6 md:grid-cols-6 md:gap-3">
           {cards.map(({ id, label, sublabel, badge, Icon }) => {
             const isSelected = selected === id;
             return (
@@ -247,11 +247,11 @@ export function AccidentTypeSelector() {
           })}
         </div>
 
-        <p className="mx-auto mt-8 max-w-xl text-center text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 md:mt-10">
+        <p className="mx-auto mt-5 max-w-xl text-center text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 md:mt-6">
           Guidance for your situation
         </p>
 
-        <div className="mt-4 md:mt-5">
+        <div className="mt-3 md:mt-4">
           <motion.div
             layout
             className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm"

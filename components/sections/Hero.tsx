@@ -1,11 +1,11 @@
 "use client";
 
-import { CallButton } from "@/components/CallButton";
-import { ScrollReveal, StaggerItem, StaggerReveal } from "@/components/ScrollReveal";
+import { ScrollReveal } from "@/components/ScrollReveal";
+import { MarqueeBanner } from "@/components/sections/MarqueeBanner";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-stone-100 px-4 pb-12 pt-28 md:px-8 md:pb-16 md:pt-32">
+    <section className="relative overflow-hidden bg-stone-100 pb-12 pt-28 md:pb-16 md:pt-32">
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -15,7 +15,7 @@ export function Hero() {
       />
       <div className="pointer-events-none absolute bottom-0 left-8 right-8 h-px section-edge-glow opacity-40" />
 
-      <div className="relative z-10 mx-auto w-full max-w-4xl text-center">
+      <div className="relative z-10 mx-auto w-full max-w-4xl px-4 text-center md:px-8">
         <ScrollReveal delay={0.05}>
           <h1 className="font-display text-balance-safe text-[clamp(2.75rem,9vw,6.5rem)] leading-[0.92] tracking-[0.02em] text-gray-900">
             Injured in an Accident?
@@ -28,24 +28,10 @@ export function Hero() {
             obligation.
           </p>
         </ScrollReveal>
+      </div>
 
-        <ScrollReveal delay={0.15} className="mt-7 flex flex-col items-center">
-          <CallButton pulse ariaLabel="Call now for free confidential help">
-            📞 Call Now — It&apos;s Free
-          </CallButton>
-        </ScrollReveal>
-
-        <StaggerReveal className="mt-5 flex flex-wrap justify-center gap-2 md:gap-3">
-          {["No cost to call", "No lawyer required", "Takes 2 minutes"].map(
-            (label) => (
-              <StaggerItem key={label}>
-                <span className="inline-flex rounded-full border border-stone-200 bg-stone-50 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-stone-500 md:text-xs">
-                  ✓ {label}
-                </span>
-              </StaggerItem>
-            ),
-          )}
-        </StaggerReveal>
+      <div className="relative z-10 mt-7 w-full">
+        <MarqueeBanner />
       </div>
     </section>
   );
