@@ -1,17 +1,13 @@
 export function MarqueeBanner() {
   const items = [
-    "Free to call — no obligation",
-    "Real person answers, not a bot",
-    "Available 24 / 7",
-    "Car, truck & motorcycle accidents",
-    "Uber & Lyft accidents covered",
-    "Understand your rights",
-    "Confidential & 100% free",
-    "Connects in under 2 minutes",
-    "No lawyer required to call",
-    "Pedestrian & cyclist accidents",
-    "Speak with someone today",
-    "No voicemail trees, ever",
+    "📞 Call Now — It's Free",
+    "📞 Call Now — It's Free",
+    "📞 Call Now — It's Free",
+    "📞 Call Now — It's Free",
+    "📞 Call Now — It's Free",
+    "📞 Call Now — It's Free",
+    "📞 Call Now — It's Free",
+    "📞 Call Now — It's Free",
   ];
 
   const track = items.map((text, i) => (

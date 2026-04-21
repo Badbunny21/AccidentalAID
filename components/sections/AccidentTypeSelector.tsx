@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { CallButton } from "@/components/CallButton";
 import { IconCheck } from "@/components/icons";
 import { ScrollReveal } from "@/components/ScrollReveal";
@@ -187,6 +187,14 @@ function panelFor(id: AccidentId) {
 
 export function AccidentTypeSelector() {
   const [selected, setSelected] = useState<AccidentId>("car");
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  function handleSelect(id: AccidentId) {
+    setSelected(id);
+    setTimeout(() => {
+      panelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  }
 
   return (
     <section
@@ -216,7 +224,7 @@ export function AccidentTypeSelector() {
               <button
                 key={id}
                 type="button"
-                onClick={() => setSelected(id)}
+                onClick={() => handleSelect(id)}
                 aria-pressed={isSelected}
                 className={`flex flex-col items-center rounded-2xl border px-2 py-4 text-center transition-all duration-300 ease-out md:px-2.5 md:py-5 ${
                   isSelected
@@ -251,7 +259,7 @@ export function AccidentTypeSelector() {
           Guidance for your situation
         </p>
 
-        <div className="mt-3 md:mt-4">
+        <div ref={panelRef} className="mt-3 scroll-mt-24 md:mt-4">
           <motion.div
             layout
             className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm"
