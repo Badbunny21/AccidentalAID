@@ -14,12 +14,12 @@ const config: Config = {
           accent: "#F59E0B",
         },
         surface: {
-          void: "#050507",
-          darkest: "#0a0a0a",
-          dark: "#0c0c0f",
-          slate: "#12151c",
-          navy: "#070b14",
-          deep: "#0a0e18",
+          void: "#fafaf9",
+          darkest: "#f5f5f4",
+          dark: "#e7e5e4",
+          slate: "#fafaf9",
+          navy: "#f5f5f4",
+          deep: "#e7e5e4",
         },
       },
       fontFamily: {

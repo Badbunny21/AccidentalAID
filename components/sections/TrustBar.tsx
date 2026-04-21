@@ -20,12 +20,12 @@ const items = [
 
 export function TrustBar() {
   return (
-    <div className="relative border-y border-white/[0.06] bg-white/[0.025] py-3.5">
+    <div className="relative border-y border-stone-200 bg-stone-50 py-3.5">
       <div className="mx-auto grid max-w-7xl grid-cols-3 items-center gap-y-3 px-4 md:flex md:flex-wrap md:justify-center md:gap-x-12 md:px-8">
         {items.map(({ Icon, text }) => (
           <div key={text} className="flex flex-col items-center gap-1.5 md:flex-row md:gap-2">
-            <Icon className="h-4 w-4 shrink-0 text-amber-accent" />
-            <span className="text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-gray-300 md:text-left md:text-xs md:tracking-[0.16em]">
+            <Icon className="h-4 w-4 shrink-0 text-red-600" />
+            <span className="text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-gray-600 md:text-left md:text-xs md:tracking-[0.16em]">
               {text}
             </span>
           </div>

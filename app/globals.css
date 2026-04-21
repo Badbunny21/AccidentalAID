@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --bg-void: #050507;
-  --text-body: #e5e7eb;
+  --bg-void: #fafaf9;
+  --text-body: #1c1917;
   --urgent: #dc2626;
   --amber-accent: #f59e0b;
-  --surface-elevated: rgba(255, 255, 255, 0.035);
-  --border-subtle: rgba(255, 255, 255, 0.08);
+  --surface-elevated: rgba(28, 25, 23, 0.04);
+  --border-subtle: rgba(28, 25, 23, 0.1);
 }
 
 html {
@@ -34,7 +34,7 @@ body {
   /* Subtle dot grain — no external assets */
   .bg-grain {
     background-image: radial-gradient(
-      rgba(255, 255, 255, 0.04) 1px,
+      rgba(28, 25, 23, 0.045) 1px,
       transparent 1px
     );
     background-size: 20px 20px;
@@ -44,13 +44,13 @@ body {
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(220, 38, 38, 0.25),
+      rgba(220, 38, 38, 0.2),
       transparent
     );
   }
 
   .card-surface {
-    @apply rounded-2xl border border-white/[0.08] bg-gradient-to-b from-white/[0.06] to-white/[0.02] backdrop-blur-sm;
+    @apply rounded-2xl border border-stone-200 bg-white shadow-sm;
   }
 }
 
@@ -64,7 +64,7 @@ body {
 }
 
 .animate-marquee {
-  animation: marquee-scroll 25s linear infinite;
+  animation: marquee-scroll 15s linear infinite;
 }
 
 @keyframes cta-pulse {

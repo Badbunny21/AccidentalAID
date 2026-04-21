@@ -191,33 +191,25 @@ export function AccidentTypeSelector() {
   return (
     <section
       id="car-accidents"
-      className="relative overflow-hidden border-t border-white/[0.06] px-4 py-16 md:px-8 md:py-28"
+      className="relative overflow-hidden border-t border-stone-200 bg-stone-100 px-4 py-10 md:px-8 md:py-24"
     >
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 90% 55% at 50% 100%, rgba(30,58,138,0.22) 0%, transparent 50%), radial-gradient(ellipse 60% 40% at 90% 20%, rgba(220,38,38,0.08) 0%, transparent 45%), linear-gradient(180deg, #0a0e16 0%, #050507 100%)",
-        }}
-      />
-      <div className="pointer-events-none absolute inset-0 bg-grain opacity-35" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70" />
+      <div className="pointer-events-none absolute inset-0 bg-grain opacity-20" />
 
       <div className="relative z-10 mx-auto max-w-7xl">
         <ScrollReveal>
-          <h2 className="text-center font-display text-[clamp(2rem,5vw,3.5rem)] leading-[0.95] tracking-[0.02em] text-white">
+          <h2 className="text-center font-display text-[clamp(2rem,5vw,3.5rem)] leading-[0.95] tracking-[0.02em] text-gray-900">
             What type of accident were you in?
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={0.06}>
-          <p className="mx-auto mt-6 max-w-2xl text-pretty text-center text-sm leading-relaxed text-gray-400 md:text-base">
+          <p className="mx-auto mt-5 max-w-2xl text-pretty text-center text-sm leading-relaxed text-gray-500 md:text-base">
             Pick what happened—then read what to know{" "}
-            <span className="text-gray-200">before</span> you deal with
+            <span className="font-semibold text-gray-700">before</span> you deal with
             insurance.
           </p>
         </ScrollReveal>
 
-        <div className="mt-10 grid grid-cols-2 gap-3 md:mt-12 md:grid-cols-6 md:gap-3">
+        <div className="mt-8 grid grid-cols-2 gap-3 md:mt-10 md:grid-cols-6 md:gap-3">
           {cards.map(({ id, label, sublabel, badge, Icon }) => {
             const isSelected = selected === id;
             return (
@@ -228,25 +220,25 @@ export function AccidentTypeSelector() {
                 aria-pressed={isSelected}
                 className={`flex flex-col items-center rounded-2xl border px-2 py-4 text-center transition-all duration-300 ease-out md:px-2.5 md:py-5 ${
                   isSelected
-                    ? "border-urgent bg-white/[0.1] shadow-cta-glow-sm ring-2 ring-red-600/20"
-                    : "border-white/[0.08] bg-white/[0.03] hover:-translate-y-[2px] hover:border-white/20 hover:bg-white/[0.05]"
+                    ? "border-red-500 bg-white shadow-cta-glow-sm ring-2 ring-red-500/20"
+                    : "border-stone-200 bg-white hover:-translate-y-[2px] hover:border-stone-300 hover:shadow-sm"
                 } `}
               >
                 <Icon
                   className={`h-10 w-10 shrink-0 md:h-12 md:w-12 ${
-                    isSelected ? "text-urgent" : "text-gray-300"
+                    isSelected ? "text-red-600" : "text-gray-500"
                   } transition-colors duration-300`}
                 />
-                <span className="mt-3 text-xs font-bold leading-tight text-white md:text-sm">
+                <span className="mt-3 text-xs font-bold leading-tight text-gray-900 md:text-sm">
                   {label}
                 </span>
                 {badge && (
-                  <span className="mt-1 text-[10px] font-medium leading-tight text-amber-accent/90 md:text-[11px]">
+                  <span className="mt-1 text-[10px] font-medium leading-tight text-amber-600 md:text-[11px]">
                     {badge}
                   </span>
                 )}
                 {sublabel && (
-                  <span className="mt-1 max-w-[9rem] text-[10px] leading-tight text-gray-400 md:max-w-none md:text-[11px]">
+                  <span className="mt-1 max-w-[9rem] text-[10px] leading-tight text-gray-500 md:max-w-none md:text-[11px]">
                     {sublabel}
                   </span>
                 )}
@@ -255,14 +247,14 @@ export function AccidentTypeSelector() {
           })}
         </div>
 
-        <p className="mx-auto mt-10 max-w-xl text-center text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 md:mt-14">
+        <p className="mx-auto mt-8 max-w-xl text-center text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 md:mt-10">
           Guidance for your situation
         </p>
 
         <div className="mt-4 md:mt-5">
           <motion.div
             layout
-            className="card-surface overflow-hidden shadow-[0_0_0_1px_rgba(255,255,255,0.06)_inset]"
+            className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm"
             transition={{
               layout: { duration: 0.45, ease: [0.25, 0.8, 0.25, 1] },
             }}
@@ -289,7 +281,7 @@ export function AccidentTypeSelector() {
 function PanelCar() {
   return (
     <>
-      <h3 className="font-display text-3xl text-white md:text-4xl">
+      <h3 className="font-display text-3xl text-gray-900 md:text-4xl">
         Car &amp; Motor Vehicle Accidents
       </h3>
       <ul className="mt-6 space-y-3">
@@ -299,17 +291,17 @@ function PanelCar() {
           "You may have options you don't know about yet",
         ].map((text) => (
           <li key={text} className="flex gap-3">
-            <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-600/20 text-red-400">
+            <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-100 text-red-600">
               <IconCheck className="h-4 w-4" />
             </span>
-            <p className="max-read text-pretty text-base font-medium text-gray-200">
+            <p className="max-read text-pretty text-base font-medium text-gray-700">
               {text}
             </p>
           </li>
         ))}
       </ul>
-      <div className="mt-8 rounded-2xl border-2 border-amber-accent/60 bg-black/50 p-5">
-        <p className="text-sm font-semibold leading-relaxed text-amber-100 md:text-base">
+      <div className="mt-8 rounded-2xl border-2 border-amber-300 bg-amber-50 p-5">
+        <p className="text-sm font-semibold leading-relaxed text-amber-800 md:text-base">
           ⚠️ If the other driver&apos;s insurance already called you — do not give
           a recorded statement before speaking with someone.
         </p>
@@ -329,7 +321,7 @@ function PanelCar() {
 function PanelDelivery() {
   return (
     <>
-      <h3 className="font-display text-3xl text-white md:text-4xl">
+      <h3 className="font-display text-3xl text-gray-900 md:text-4xl">
         Injured by a Delivery Driver?
       </h3>
       <ul className="mt-6 space-y-3">
@@ -339,17 +331,17 @@ function PanelDelivery() {
           "Large company insurance policies are designed to pay as little as possible",
         ].map((text) => (
           <li key={text} className="flex gap-3">
-            <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-500/15 text-amber-accent">
+            <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600">
               <IconCheck className="h-4 w-4" />
             </span>
-            <p className="max-read text-pretty text-base font-medium text-gray-200">
+            <p className="max-read text-pretty text-base font-medium text-gray-700">
               {text}
             </p>
           </li>
         ))}
       </ul>
-      <div className="mt-8 rounded-2xl border-2 border-amber-accent/60 bg-black/50 p-5">
-        <p className="text-sm font-semibold leading-relaxed text-amber-100 md:text-base">
+      <div className="mt-8 rounded-2xl border-2 border-amber-300 bg-amber-50 p-5">
+        <p className="text-sm font-semibold leading-relaxed text-amber-800 md:text-base">
           ⚠️ Do NOT accept any offer or give a statement to a delivery
           company&apos;s insurance without talking to someone first.
         </p>
@@ -369,10 +361,10 @@ function PanelDelivery() {
 function PanelBigTruck() {
   return (
     <>
-      <h3 className="font-display text-3xl text-white md:text-4xl">
+      <h3 className="font-display text-3xl text-gray-900 md:text-4xl">
         Truck &amp; Commercial Vehicle Accidents
       </h3>
-      <p className="mt-3 text-sm font-medium text-gray-400 md:text-base">
+      <p className="mt-3 text-sm font-medium text-gray-500 md:text-base">
         18-wheelers · Semi-trucks · Box trucks · Company vans · Work vehicles
       </p>
       <ul className="mt-6 space-y-3">
@@ -382,17 +374,17 @@ function PanelBigTruck() {
           "These claims are more complex — and often worth significantly more",
         ].map((text) => (
           <li key={text} className="flex gap-3">
-            <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-600/20 text-red-400">
+            <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-100 text-red-600">
               <IconCheck className="h-4 w-4" />
             </span>
-            <p className="max-read text-pretty text-base font-medium text-gray-200">
+            <p className="max-read text-pretty text-base font-medium text-gray-700">
               {text}
             </p>
           </li>
         ))}
       </ul>
-      <div className="mt-8 rounded-2xl border-2 border-amber-accent/60 bg-black/50 p-5">
-        <p className="text-sm font-semibold leading-relaxed text-amber-100 md:text-base">
+      <div className="mt-8 rounded-2xl border-2 border-amber-300 bg-amber-50 p-5">
+        <p className="text-sm font-semibold leading-relaxed text-amber-800 md:text-base">
           ⚠️ Evidence like truck black box data and driver logs can disappear
           quickly. Time matters.
         </p>
@@ -412,7 +404,7 @@ function PanelBigTruck() {
 function PanelMotorcycle() {
   return (
     <>
-      <h3 className="font-display text-3xl text-white md:text-4xl">
+      <h3 className="font-display text-3xl text-gray-900 md:text-4xl">
         Motorcycle Accidents
       </h3>
       <ul className="mt-6 space-y-3">
@@ -422,17 +414,17 @@ function PanelMotorcycle() {
           "You deserve a real fight, not a fast denial",
         ].map((text) => (
           <li key={text} className="flex gap-3">
-            <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-600/20 text-red-400">
+            <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-100 text-red-600">
               <IconCheck className="h-4 w-4" />
             </span>
-            <p className="max-read text-pretty text-base font-medium text-gray-200">
+            <p className="max-read text-pretty text-base font-medium text-gray-700">
               {text}
             </p>
           </li>
         ))}
       </ul>
-      <div className="mt-8 rounded-2xl border-2 border-amber-accent/60 bg-black/50 p-5">
-        <p className="text-sm font-semibold leading-relaxed text-amber-100 md:text-base">
+      <div className="mt-8 rounded-2xl border-2 border-amber-300 bg-amber-50 p-5">
+        <p className="text-sm font-semibold leading-relaxed text-amber-800 md:text-base">
           ⚠️ Don&apos;t let insurance label you as &apos;at fault&apos; before
           you&apos;ve spoken with someone.
         </p>
@@ -452,7 +444,7 @@ function PanelMotorcycle() {
 function PanelRideshare() {
   return (
     <>
-      <h3 className="font-display text-3xl text-white md:text-4xl">
+      <h3 className="font-display text-3xl text-gray-900 md:text-4xl">
         Rideshare Accidents (Uber &amp; Lyft)
       </h3>
       <ul className="mt-6 space-y-3">
@@ -462,17 +454,17 @@ function PanelRideshare() {
           "Rideshare companies make claims complicated on purpose — you don't have to navigate it alone",
         ].map((text) => (
           <li key={text} className="flex gap-3">
-            <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-500/15 text-amber-accent">
+            <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-600">
               <IconCheck className="h-4 w-4" />
             </span>
-            <p className="max-read text-pretty text-base font-medium text-gray-200">
+            <p className="max-read text-pretty text-base font-medium text-gray-700">
               {text}
             </p>
           </li>
         ))}
       </ul>
-      <div className="mt-8 rounded-2xl border-2 border-amber-accent/60 bg-black/50 p-5">
-        <p className="text-sm font-semibold leading-relaxed text-amber-100 md:text-base">
+      <div className="mt-8 rounded-2xl border-2 border-amber-300 bg-amber-50 p-5">
+        <p className="text-sm font-semibold leading-relaxed text-amber-800 md:text-base">
           ⚠️ Rideshare insurance claims have specific windows and rules. Acting
           quickly protects your claim.
         </p>
@@ -492,7 +484,7 @@ function PanelRideshare() {
 function PanelPedestrian() {
   return (
     <>
-      <h3 className="font-display text-3xl text-white md:text-4xl">
+      <h3 className="font-display text-3xl text-gray-900 md:text-4xl">
         Pedestrian &amp; Cyclist Accidents
       </h3>
       <ul className="mt-6 space-y-3">
@@ -502,17 +494,17 @@ function PanelPedestrian() {
           "Medical bills, lost wages, and pain and suffering are all part of your claim",
         ].map((text) => (
           <li key={text} className="flex gap-3">
-            <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-600/20 text-red-400">
+            <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-100 text-red-600">
               <IconCheck className="h-4 w-4" />
             </span>
-            <p className="max-read text-pretty text-base font-medium text-gray-200">
+            <p className="max-read text-pretty text-base font-medium text-gray-700">
               {text}
             </p>
           </li>
         ))}
       </ul>
-      <div className="mt-8 rounded-2xl border-2 border-amber-accent/60 bg-black/50 p-5">
-        <p className="text-sm font-semibold leading-relaxed text-amber-100 md:text-base">
+      <div className="mt-8 rounded-2xl border-2 border-amber-300 bg-amber-50 p-5">
+        <p className="text-sm font-semibold leading-relaxed text-amber-800 md:text-base">
           ⚠️ Even if you didn&apos;t have a vehicle, you still have rights. Call
           before assuming you have no case.
         </p>

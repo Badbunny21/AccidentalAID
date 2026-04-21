@@ -37,11 +37,11 @@ export function Faq() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="relative border-t border-white/[0.06] bg-surface-dark px-4 py-16 md:px-8 md:py-28">
+    <section className="relative border-t border-stone-200 bg-stone-50 px-4 py-10 md:px-8 md:py-24">
       <div className="pointer-events-none absolute inset-0 bg-grain opacity-15" />
       <div className="relative mx-auto max-w-3xl">
         <ScrollReveal>
-          <h2 className="text-center font-display text-[clamp(2rem,5vw,3.25rem)] leading-[0.95] tracking-[0.02em] text-white">
+          <h2 className="text-center font-display text-[clamp(2rem,5vw,3.25rem)] leading-[0.95] tracking-[0.02em] text-gray-900">
             FAQ
           </h2>
           <p className="mx-auto mt-5 max-read text-center text-sm text-gray-500">
@@ -49,7 +49,7 @@ export function Faq() {
           </p>
         </ScrollReveal>
 
-        <div className="mt-12 space-y-3">
+        <div className="mt-10 space-y-3">
           {faqs.map((item, i) => {
             const isOpen = open === i;
             return (
@@ -57,8 +57,8 @@ export function Faq() {
                 <div
                   className={`rounded-2xl border transition-[border-color,background-color,box-shadow] duration-200 ${
                     isOpen
-                      ? "border-amber-accent/40 bg-white/[0.05] shadow-[0_0_0_1px_rgba(245,158,11,0.15)_inset]"
-                      : "border-white/[0.08] bg-white/[0.02] hover:border-white/15"
+                      ? "border-amber-300 bg-amber-50/50 shadow-sm"
+                      : "border-stone-200 bg-white hover:border-stone-300"
                   }`}
                 >
                   <button
@@ -67,11 +67,11 @@ export function Faq() {
                     className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left md:px-6 md:py-5"
                     aria-expanded={isOpen}
                   >
-                    <span className="text-sm font-semibold text-white md:text-base">
+                    <span className="text-sm font-semibold text-gray-900 md:text-base">
                       {item.q}
                     </span>
                     <span
-                      className={`shrink-0 text-amber-accent transition-transform duration-200 ${
+                      className={`shrink-0 text-amber-600 transition-transform duration-200 ${
                         isOpen ? "rotate-180" : ""
                       }`}
                       aria-hidden
@@ -86,9 +86,9 @@ export function Faq() {
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-                        className="overflow-hidden border-t border-white/[0.06]"
+                        className="overflow-hidden border-t border-stone-100"
                       >
-                        <p className="max-read px-5 py-4 text-sm leading-relaxed text-gray-400 md:px-6">
+                        <p className="max-read px-5 py-4 text-sm leading-relaxed text-gray-600 md:px-6">
                           {item.a}
                         </p>
                       </motion.div>
@@ -100,7 +100,7 @@ export function Faq() {
           })}
         </div>
 
-        <ScrollReveal delay={0.08} className="mt-14 flex justify-center">
+        <ScrollReveal delay={0.08} className="mt-10 flex justify-center">
           <CallButton ariaLabel="Call with your questions">
             📞 Call with your questions
           </CallButton>

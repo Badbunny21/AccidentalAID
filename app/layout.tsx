@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${bebas.variable} ${inter.variable}`}>
-      <body className="min-h-screen bg-surface-void font-sans antialiased">
+      <body className="min-h-screen bg-stone-50 font-sans antialiased">
         {children}
       </body>
     </html>

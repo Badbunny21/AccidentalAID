@@ -17,13 +17,13 @@ export function Nav() {
     <header
       className={`fixed inset-x-0 top-0 z-[10000] transition-[background,backdrop-filter,border-color,box-shadow] duration-500 ${
         solid
-          ? "border-b border-white/[0.06] bg-surface-void/90 shadow-[0_12px_40px_rgba(0,0,0,0.55)] backdrop-blur-xl"
-          : "border-b border-transparent bg-gradient-to-b from-black/50 to-transparent"
+          ? "border-b border-stone-200 bg-stone-50/95 shadow-sm backdrop-blur-xl"
+          : "border-b border-transparent bg-gradient-to-b from-stone-50/85 to-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3.5 md:px-8">
         <div className="min-w-0">
-          <span className="block font-display text-2xl tracking-[0.04em] text-white md:text-[1.75rem]">
+          <span className="block font-display text-2xl tracking-[0.04em] text-gray-900 md:text-[1.75rem]">
             {SITE_NAME}
           </span>
           <span className="mt-0.5 hidden text-[10px] font-medium uppercase tracking-[0.18em] text-gray-500 sm:block">
